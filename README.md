@@ -68,6 +68,7 @@ https://api.sfmoma.org/collection/artworks/5418a96ea45f887a02000ff1
 ### Sort
 
 https://api.sfmoma.org/collection/artists/?order=birth_date
+
 https://api.sfmoma.org/collection/artists/?order=birth_date,death_date
 
 https://api.sfmoma.org/collection/artworks/?order=artwork_id
