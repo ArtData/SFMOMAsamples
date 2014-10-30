@@ -1,0 +1,14 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('name.prefix')
+[
+  "",
+  "Baron",
+  "Capt.",
+  "Count",
+  "Dr.",
+  "Mr.",
+  "Prof.",
+  "Rev.",
+  "SP6",
+  "Sir",
+  "The 12th Lord"
+]

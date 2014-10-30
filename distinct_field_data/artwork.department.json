@@ -1,0 +1,26 @@
+//weather-balloon (mongod)db:sfmoma_development> db.artworks.distinct('department')
+[
+  "",
+  "Architecture and Design and Painting and Sculpture",
+  "Architecture and Design",
+  "Architecture and Design, and Painting and Sculpture",
+  "Archives",
+  "Education",
+  "Library",
+  "Media Arts & Architecture and Design",
+  "Media Arts and Painting and Sculpture",
+  "Media Arts and Photography",
+  "Media Arts",
+  "Media Arts, and Painting and Sculpture",
+  "Media Arts, Painting and Sculpture, and Photography",
+  "Painting and Sculpture and Media Arts",
+  "Painting and Sculpture",
+  "Painting and Sculpture, and Photography",
+  "Painting and Sculpture, Photography",
+  "Photography and Media Arts",
+  "Photography",
+  "photography",
+  "Photography, and Painting and Sculpture",
+  "SFMOMA Library",
+  "study collection"
+]

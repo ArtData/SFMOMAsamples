@@ -1,0 +1,9 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('location_cultural.continent')
+[
+  "",
+  "Africa",
+  "Asia",
+  "Europe",
+  "North America",
+  "South America"
+]

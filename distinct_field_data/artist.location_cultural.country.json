@@ -1,0 +1,22 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('location_cultural.country')
+[
+  "",
+  "Argentina",
+  "Belgium",
+  "China",
+  "Czech Republic",
+  "France",
+  "German",
+  "Germany",
+  "Great Britain",
+  "Ireland",
+  "Italy",
+  "Japan",
+  "Netherlands",
+  "South Africa",
+  "Sweden",
+  "US",
+  "Ukraine",
+  "United Kingdom",
+  "United States"
+]

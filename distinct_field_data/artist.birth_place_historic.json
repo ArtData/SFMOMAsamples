@@ -1,0 +1,8 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('birth_place_historic')
+[
+  "",
+  "Bay Area",
+  "Jericho, Vermont",
+  "Pacific Northwest",
+  "Silicon Valley"
+]

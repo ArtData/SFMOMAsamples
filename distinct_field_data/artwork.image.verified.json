@@ -1,0 +1,15 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artworks.distinct('image.verified')
+[
+  0,
+  1,
+  401,
+  402,
+  403,
+  404,
+  405,
+  406,
+  407,
+  408,
+  50,
+  78
+]

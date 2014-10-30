@@ -1,0 +1,15 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('gender')
+[
+  "",
+  "Female",
+  "Male",
+  "cross reference",
+  "cross-reference",
+  "duplicate",
+  "duplicate?",
+  "female",
+  "group",
+  "male",
+  "male?",
+  "unknown",
+]

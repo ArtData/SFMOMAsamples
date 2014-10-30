@@ -1,0 +1,13 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('location_active.location')
+[
+  "",
+  "California",
+  "California, Bay Area",
+  "California, Bay Area, Los Angeles",
+  "California, Los Angeles",
+  "Japan",
+  "Lexington, Michigan",
+  "Mexico",
+  "Pennsylvania",
+  "Seattle, Washington"
+]

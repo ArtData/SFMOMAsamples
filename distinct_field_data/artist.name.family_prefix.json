@@ -1,0 +1,10 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('name.family_prefix')
+[
+  "",
+  "Acme Telephoto",
+  "J.",
+  "Lord",
+  "de l'Abrie",
+  "van der",
+  "von",
+]

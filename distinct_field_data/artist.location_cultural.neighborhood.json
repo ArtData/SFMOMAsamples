@@ -1,0 +1,14 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('location_cultural.neighborhood')
+[
+  "",
+  "381 Broadway",
+  "Bay Area",
+  "Brooklyn",
+  "Chinatown",
+  "Culver City",
+  "Harlem, New York City",
+  "Saint-Denis",
+  "Silverlake",
+  "Southern California",
+  "St. Paul's Cray"
+]

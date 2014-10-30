@@ -1,0 +1,9 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('name.suffix')
+[
+  "",
+  "F.R.S.",
+  "Jr.",
+  "M.D."
+  "Sr.",
+  "USA"
+]

@@ -1,0 +1,18 @@
+// weather-balloon (mongod)db:sfmoma_development> db.artists.distinct('school')
+[
+  "",
+  "Arte-povera",
+  "California College of the Arts",
+  "Chicago School of Design",
+  "CoBrA (1948-51), Situationist International (1951-60)",
+  "Droog",
+  "Harvard",
+  "Los Angeles",
+  "Mid-century modern",
+  "NASA Astronaut",
+  "RISD",
+  "Radical Architectore",
+  "SFAI (MFA)",
+  "Yale University",
+  "tensile"
+]
