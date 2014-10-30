@@ -35,14 +35,17 @@ an artist `artist_id`, or the unique document `_id`.
 Exmaple name slugs might be `Agnes_Martin` or `Pablo_Picasso`
 
 https://api.sfmoma.org/collection/artists/Agnes_Martin
+
 https://api.sfmoma.org/collection/artists/Pablo_Picasso
 
 Their corresponding `artist_id` returns the same documents,
 https://api.sfmoma.org/collection/artists/856
+
 https://api.sfmoma.org/collection/artists/867
 
 As does the unique document `_id` for each,
 https://api.sfmoma.org/collection/artists/54189f35a45f8874c6000102
+
 https://api.sfmoma.org/collection/artists/54189f35a45f8874c600010d
 
 With future data migrations the unique document `_id` *might* change where as
@@ -58,6 +61,7 @@ or the unique document `_id`. The current data migration does not contain any
 artwork name slugs.
 
 https://api.sfmoma.org/collection/artworks/4351
+
 https://api.sfmoma.org/collection/artworks/5418a96ea45f887a02000ff1
 
 
@@ -87,6 +91,7 @@ without using an envelope.
 
 
 https://api.sfmoma.org/collection/artworks/?per_page=100,page=2
+
 https://api.sfmoma.org/collection/artworks/?per_page=100,page=1,offset=100
 
 
