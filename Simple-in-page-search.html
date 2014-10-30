@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Keir Winesmith | just search</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://keirdotnet.net/resources/css/keirdotcss.css"/>
+<link rel="shortcut icon" type="image/x-png" href="http://keirdotnet.net/resources/images/favicon.png"/>
+<meta name="description" content="testing" />
+</head>
+<body>
+<div id="holster" style="margin-top: 260px; margin-left: 280px; width: 500px;">
+<div id="links"><h1>Search the API:</h1></div>
+<!-- <div id="feed"><p><img src="/resources/images/loading.gif" align="right" />Retrieving latest tweets and blog posts, and sorting them by date </p></div> -->
+<form action="/" id="searchForm">
+  <input type="text" name="s" placeholder="Search...">
+  <input type="submit" value="Search">
+</form>
+<!-- the result of the search will be rendered inside this div -->
+<div style="width:801px">
+    <div id="whatresultdiv" class="whatresultdiv" style="width:500px; float:left;"></div>
+    <div id="whoresultdiv" class="whoresultdiv" style="width:300px; float:left;"></div>
+</div>
+
+<script>
+// Attach a submit handler to the form
+$( "#searchForm" ).submit(function( event ) {
+ 
+  // Stop form from submitting normally
+  event.preventDefault();
+ 
+  // Get some values from elements on the page:
+  var $form = $( this ),
+    term = $form.find( "input[name='s']" ).val(),
+    url = $form.attr( "action" );
+ 
+  // Send the data using post
+  var request = $.ajax({
+	  url: "https://api.sfmoma.org/collection/search?max_results=100&fields=artwork_id,creators,departments,display_title,medium&q=" + term,
+    beforeSend: function(){
+            $('div.whoresultdiv').html("<p>Looking...<img src=\"http://keirdotnet.net/resources/images/loading.gif\" align=\"right\" /></p>");
+        },
+	  type: "GET",
+	  async: false,
+      headers: {
+    	"Authorization": "Basic " + btoa("USERNAME:PASSWORD")
+  	  },
+	  dataType: "json"
+  });
+ 
+  // Put the results in a div
+  var theWhatHTML = '<h2>What:</h2>';
+  var theWhoHTML = '<h2>Who:</h2>';
+  var artists = {};
+  request.done(function( data ) {
+  	$.each( data, function( i, item ) {
+  		if(item.display_title.toLowerCase().indexOf(term) >= 0){
+        if((item.creators)!==null){
+          theWhatHTML += '<p style="padding-bottom:10px"><strong><a href="http://api.sfmoma.org/collection/artworks/' + item.artwork_id + '">' + item.display_title + "</a></strong> by " + item.creators[0].artist + "<br/>" + item.medium + "<br/></p>";
+          artists[item.creators[0].artist] = artists[item.creators[0].artist] ? artists[item.creators[0].artist] + 1 : 1;          
+        }
+      }
+      });
+  	theWhatHTML += '<br/>';
+  	$('div.whatresultdiv').html(theWhatHTML);
+    var theMostTerm = [];    
+    var theRestTerm = [];    
+    $.each( artists, function(artist, amount){        
+        if(amount==1){
+          theRestTerm.push(artist);
+        }else{
+          theMostTerm.push({name:artist,value:amount});
+        };
+    });
+    if((theMostTerm.length)>0){
+      theWhoHTML += '<p style="padding-bottom:10px">The most ' + term + ' is ';
+      $.each( theMostTerm, function(j,mostArtist){
+          if((mostArtist)!==null){
+            theWhoHTML += mostArtist.name + ', ';
+          }                    
+      });      
+      theWhoHTML = theWhoHTML.substring(0, theWhoHTML.length - 2);
+      theWhoHTML += '.</p>';
+    }
+    if((theRestTerm.length)>0){
+      theWhoHTML += '<p style="padding-bottom:10px">Also a little bit ' + term + ' are ';
+      $.each( theRestTerm, function(id,artistname){        
+          theWhoHTML += artistname + ', ';
+      });      
+      theWhoHTML = theWhoHTML.substring(0, theWhoHTML.length - 2);
+      theWhoHTML += '.</p>';
+    }
+    theWhoHTML += '<br/>';
+    $('div.whoresultdiv').html(theWhoHTML);
+  });
+});
+</script>
+
+</div>
+</body>
+</html>
